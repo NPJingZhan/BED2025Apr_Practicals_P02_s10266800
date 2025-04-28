@@ -1,0 +1,4 @@
+Through the practical and experimenting with postman I learned how to apply CRUD i.e. Create, Read, Update & Delete into my work projetcs 
+The challenge I faced was not understanding how to apply the POST part by going to the 'raw' and implementing the required elements
+
+3a. Using POST creates multiple different elements with different IDs whereas PUT updates/changes the information of an element without creating new elements with a different ID which might cause confusion
