@@ -1,0 +1,16 @@
+app.use(express.json()) - This parses incoming JSON files request bodies which is essential for reading 'req.body' when data is sent in JSON format
+req.body - Contains data sent in body of the request
+req.query - Has key-value pairs in URL query strings that is used for filtering, sorting or pagination
+req.params.id -  it is to route parameters typicalling used for identifying a resource
+
+Describe the significance of using different HTTP methods (e.g., GET, POST, PUT, DELETE) in your API. How do they relate to CRUD operations?
+GET - Retrieve data --> Read (R of CRUD)
+POST - Create new data --> Create (C of CRUD)
+PUT - Update data --> Update (U of CRUD)
+DELETE - Remove data --> Delete (D of CRUD)
+
+200 OK - The request is successfull (GET, PUT)
+201 Created - resource is successfully created (POST)
+400 Bad Request - Cannot process client input (Client Error)
+404 Not Found - Resource is not found
+500 Internal Server Error - Something is wrong in server site
