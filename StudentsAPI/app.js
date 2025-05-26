@@ -5,11 +5,11 @@ const dotenv = require("dotenv");
 // Load environment variables
 dotenv.config();
 
-const bookController = require("./controllers/bookController");
+const studentController = require("./controllers/studentController");
 const {
-  validateBook,
-  validateBookId,
-} = require("./middlewares/bookValidation"); // import Book Validation Middleware
+  validateStudent,
+  validateStudentId,
+} = require("./middlewares/studentValidation"); // import Student Validation Middleware
 
 // Create Express app
 const app = express();
@@ -24,19 +24,17 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bo
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // Ensure extended is true for urlencoded
 
-// --- Serve static files from the 'public' directory ---
-// When a request comes in for a static file (like /index.html, /styles.css, /script.js),
-// Express will look for it in the 'public' folder relative to the project root.
 app.use(express.static(path.join(__dirname, "public")));
 
-// Routes for books
+
+// Routes for students
 // Apply middleware *before* the controller function for routes that need it
-app.get("/books", bookController.getAllBooks);
-app.get("/books/:id", validateBookId, bookController.getBookById); // Use validateBookId middleware
-app.post("/books", validateBook, bookController.createBook); // Use validateBook middleware
+app.get("/students", studentController.getAllStudents);
+app.get("/students/:id", validateStudentId, studentController.getStudentById); // Use validateStudentId middleware
+app.post("/students", validateStudent, studentController.createStudent); // Use validateStudent middleware
 // Add routes for PUT/DELETE if implemented, applying appropriate middleware
-app.put("/books/:id", validateBookId, validateBook, bookController.updateBook);
-app.delete("/books/:id", validateBookId, bookController.deleteBook);
+app.put("/students/:id", validateStudentId, validateStudent, studentController.updateStudent);
+app.delete("/students/:id", validateStudentId, studentController.deleteStudent);
 
 // Start server
 app.listen(port, () => {

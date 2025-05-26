@@ -72,6 +72,6 @@ module.exports = {
   getAllBooks,
   getBookById,
   createBook,
-  updateBook,   // <-- add this
-  deleteBook    // <-- add this
+  updateBook,
+  deleteBook
 };
